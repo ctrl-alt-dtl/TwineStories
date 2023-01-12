@@ -13,11 +13,37 @@
 
 Just in front of you stands an old victorian mansion. In your hands is a carefully penned letter and a photograph.
 
-What would you like to do?
+(set: $typewriterText to &quot;What would you like to do?&quot;)
+{
+  &lt;!-- Create a variable to track the position within the $typewriterText string --&gt;
+  (set: $typewriterPos to 1)
 
-[[Grand Foyer]] </tw-passagedata><tw-passagedata pid="2" name="Grand Foyer" tags="" position="1200,500" size="100,100">From a massive wind gust, the door slams shut behind you and you hear the clack of a lock on that door. You realize you cannot go out the way you came in.
+  &lt;!-- Create a hook to hold the typed text --&gt;
+  |typewriterOutput&gt;[]
 
-You are all alone in the grand foyer of an old-victorian but well maintained mansion. Nothing else can be heard except the sound of a great grandfather clock ticks in the distance...</tw-passagedata></tw-storydata>
+  &lt;!-- Set a delay of 20ms seconds per loop --&gt;
+  (live: 40ms)[
+
+    &lt;!-- Add the next character to the hook --&gt;
+    (append: ?typewriterOutput)[(print: $typewriterText&#39;s $typewriterPos)]
+
+    &lt;!-- Update the position --&gt;
+    (set: $typewriterPos to it + 1)
+
+    &lt;!-- If it&#39;s gone past the end, stop --&gt;
+    (if: $typewriterPos is $typewriterText&#39;s length + 1)[
+      (stop:)
+    ]
+  ]
+}
+
+Walk to the [[Front Door]] </tw-passagedata><tw-passagedata pid="2" name="Grand Foyer" tags="" position="1300,500" size="100,100">From a massive wind gust, the door slams shut behind you and you hear a clack of the deadbolt engaging on that door. You realize you cannot go out the way you came in.
+
+You are all alone in the grand foyer of an old-victorian but well maintained mansion. Nothing else can be heard except the sound of a great grandfather clock ticks in the distance...</tw-passagedata><tw-passagedata pid="3" name="Front Door" tags="" position="1150,500" size="100,100">In front of you is a large gray heavy wooden door with two glass panes of intricate stained glass windows and a robust brass knocker in the middle. The door frame on the right side has the address number which is also inlaid in stained glass. You see a shadow pass by the window, but you hear no sound.
+
+The winds are picking up and the rain is becoming intense...
+
+Enter the [[Grand Foyer]] </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
