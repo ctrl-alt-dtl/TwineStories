@@ -8,6 +8,10 @@
 - [Cradle](https://github.com/daterre/Cradle) to import into Unity.
 - [Encrusted](https://github.com/DeMille/encrusted). Something I might end up using once I have a viable story. Bookmarking for now.
 
+## Libraries
+
+- [TypewiterJS](https://github.com/tameemsafi/typewriterjs). Eventually I'll figure out how to use this.
+
 ## History
 
 [Robert Lafore’s Interactive Fiction](https://www.filfre.net/2011/09/robert-lafores-interactive-fiction/)
