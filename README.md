@@ -11,7 +11,7 @@
 ## Libraries
 
 - [TypewiterJS](https://github.com/tameemsafi/typewriterjs). Eventually I'll figure out how to use this.
-- [Harlowe](https://twine2.neocities.org/) As the Twine Story Formatting engine.
+- [Harlowe](https://twine2.neocities.org/). As the Twine Story Formatting engine.
 - [SugarCube](https://www.motoslave.net/sugarcube/2/docs/). Another Tine Story Formatting engine that I plan to try.
 
 ## History
