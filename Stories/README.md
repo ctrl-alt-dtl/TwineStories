@@ -2,4 +2,4 @@
 
 ## The Mansion
 
-About: Solve a mystery at a distant mansion.
+About: Rogue-like story in which you solve a mystery at a distant mansion.
