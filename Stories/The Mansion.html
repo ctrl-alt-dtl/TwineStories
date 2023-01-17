@@ -11,12 +11,12 @@
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Mansion.</tw-noscript></noscript></tw-story>
 <tw-storydata name="The Mansion" startnode="14" creator="Twine" creator-version="2.6.0" format="Harlowe" format-version="3.3.4" ifid="C96CFA43-FE17-41CB-8F21-5EBE78145CAD" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="1st-Floor" color="purple"></tw-tag><tw-tag name="Inventory" color="red"></tw-tag><tw-tag name="NoInventory" color=""></tw-tag><tw-passagedata pid="1" name="Starting Area" tags="" position="1000,500" size="100,100">(set: $inventory to (a: &quot; a carefully penned letter&quot;, &quot; a small photograph&quot;))
 (if:visits &gt; 1)[Woah! That was odd!]
-You feel drops of rain starting to fall. A cold chilling wind is picking up and you hear the low howling of the gusts in the trees behind you. You left your car a few miles back next to the small dirt road you just trekked. The incoming storm is starting to pick up and returning to your car safe and dry is not an option. 
+You feel drops of rain starting to fall. A cold chilling wind is picking up and you hear the low howling of the gusts in the trees behind you. You left your car a few miles back next to the small dirt road you just trekked. The incoming storm is starting to pick up and returning to your car safe and dry is (if:visits &lt; 2)[a possiblity](else:)+(t8n:&quot;dissolve&quot;)+(text-style:&quot;underline&quot;)[probably not going to happen]. 
 
 Just in front of you stands an old victorian mansion. In your right hand is (color:#07951A)[&#39;&#39;a carefully penned letter&#39;&#39;] and an attached (color:#07951A)[&#39;&#39;a small photograph&#39;&#39;]. The smell of the ink and wax seal on the envelope grabs the attention of your nose.
 
 (set: $typewriterText to &quot;What would you like to do?&quot;)
-(text-style:&quot;bold&quot;)[{
+(if:visits &lt; 2)+(text-style:&quot;bold&quot;)[{
 	&lt;!-- Create a variable to track the position within the $typewriterText string --&gt;
     (set: $typewriterPos to 1)
 
@@ -36,15 +36,16 @@ Just in front of you stands an old victorian mansion. In your right hand is (col
     (if: $typewriterPos is $typewriterText&#39;s length + 1)[(stop:)]
   ]
 }(stop:)]
+(else:)+(text-style:&quot;bold&quot;)[&quot;What would you like to do?&quot;]
 
 (t8n:&quot;instant&quot;)+(t8n-delay:3s)[Return to the [[Car]].]
-(t8n:&quot;instant&quot;)+(t8n-delay:3s)+(if:visits &gt; 1)[Walk to the [[Front Door]].]</tw-passagedata><tw-passagedata pid="2" name="Grand Foyer" tags="Start" position="1500,400" size="100,100">(if:visits &gt; 1)[You have been here before.]
+(t8n:&quot;dissolve&quot;)+(t8n-delay:4s)+(if:visits &gt; 1)[Make haste to the [[Front Door]].]</tw-passagedata><tw-passagedata pid="2" name="Grand Foyer" tags="Start" position="1500,400" size="100,100">(if:visits &gt; 1)[You have been here before.]
 Walking around the Grand Foyer you notice the centerpiece of the room is a small circular table. On the table is a dark ceramic vase with some fresh red roses. A large crystal-like chandelier hangs above the table, its dim but focused light shining down onto the table; as if to encapsulate the roses in time.
 On the east wall is the grandfather clock, eerily ticking away and there are intricate oil paintings scattered about the east and west walls. 
 
 
 [[Go back to the lounge again.-&gt;Lounge]]
-[[Inspect the roses.-&gt;Foyer Roses]]</tw-passagedata><tw-passagedata pid="3" name="Front Door" tags="Start" position="1150,500" size="100,100">In front of you is a large gray heavy wooden door with two glass panes of intricate stained glass windows and a robust brass knocker in the middle. There is a small brass mail slot and an antique door handle on the right. The door frame on the right side has the address number which is also inlaid in stained glass. You see a shadow pass by the window, but you hear no sound.
+[[Inspect the roses.-&gt;Foyer Roses]]</tw-passagedata><tw-passagedata pid="3" name="Front Door" tags="Start" position="1150,500" size="100,100">In front of you is a large gray and heavy wooden door with two glass panes of intricate stained glass windows and a robust brass knocker in the middle. There is a small brass mail slot and an antique door handle on the right. The door frame on the right side has the address number which is also inlaid in stained glass. You see a shadow pass by the window, but you hear no sound.
 
 The winds are picking up and the rain is becoming intense...
 
