@@ -9,8 +9,9 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Mansion.</tw-noscript></noscript></tw-story>
-<tw-storydata name="The Mansion" startnode="14" creator="Twine" creator-version="2.6.0" format="Harlowe" format-version="3.3.4" ifid="C96CFA43-FE17-41CB-8F21-5EBE78145CAD" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="1st-Floor" color="purple"></tw-tag><tw-tag name="Inventory" color="red"></tw-tag><tw-tag name="NoInventory" color=""></tw-tag><tw-tag name="Inventory-Items" color="green"></tw-tag><tw-passagedata pid="1" name="Starting Area" tags="Inventory" position="1000,500" size="100,100">(set: $inventory to (a: &quot;a carefully penned letter&quot;, &quot;a small photograph&quot;))
-(if: visits &gt; 2 and $deathFlag is &quot;True&quot;)[Woah! That was odd!]
+<tw-storydata name="The Mansion" startnode="13" creator="Twine" creator-version="2.6.0" format="Harlowe" format-version="3.3.4" ifid="C96CFA43-FE17-41CB-8F21-5EBE78145CAD" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="1st-Floor" color="purple"></tw-tag><tw-tag name="Inventory" color="red"></tw-tag><tw-tag name="NoInventory" color=""></tw-tag><tw-tag name="Inventory-Items" color="green"></tw-tag><tw-passagedata pid="1" name="Starting Area" tags="Inventory" position="1000,500" size="100,100">(set: $inventory to (a: &quot;a carefully penned letter&quot;, &quot;a small photograph&quot;))
+(set: $usedInventory to (a:))
+(if: visits &gt; 2 and $deathFlag is &quot;True&quot;)[&#39;&#39;Woah! That was odd!&#39;&#39;]
 You feel drops of rain starting to fall. A cold chilling wind is picking up and you hear the low howling of the gusts in the trees behind you. You left your car a few miles back next to the small dirt road you just trekked. The incoming storm is starting to pick up and returning to your car safe and dry is {
 (if: visits &gt; 2 and $deathFlag is &quot;True&quot;)+(t8n:&quot;dissolve&quot;)+(text-style:&quot;underline&quot;)[probably now not going to happen.]
 (else:)[a possiblity.]}
@@ -41,24 +42,34 @@ Just in front of you stands an old victorian mansion. In your right hand is (col
 (else:)+(text-style:&quot;bold&quot;)[&quot;What would you like to do?&quot;]
 (if: visits is 1)[(t8n:&quot;instant&quot;)+(t8n-delay:3s)[Return to the [[Car]].]]
 (else:)[Return to the [[Car]].]
-(t8n:&quot;dissolve&quot;)+(t8n-delay:2s)+(if: visits &gt; 2 and $deathFlag is &quot;True&quot;)[Make haste to the [[Front Door]].]
+(t8n:&quot;dissolve&quot;)+(t8n-delay:1s)+(if: visits &gt; 2 and $deathFlag is &quot;True&quot;)[Make haste to the [[Front Door]].]
 
 &lt;!-- 
 FIXED: When checking the inventory you can bypass the visit to the Car
 FIXED: Issue when restarting the passage and returning from the inventory, the default text shows. ISSUE: {{(history:)&#39;s last is not &quot;Inventory&quot;)}} &gt;&gt; $deathFlag is &quot;True&quot;.
---&gt;</tw-passagedata><tw-passagedata pid="2" name="Grand Foyer" tags="Start" position="1500,400" size="100,100">(if:visits &gt; 1)[You have been here before.]
+--&gt;</tw-passagedata><tw-passagedata pid="2" name="Grand Foyer" tags="Start 1st-Floor" position="1500,400" size="100,100">(if:visits &gt; 1)[You have been here before.]
 Walking around the Grand Foyer you notice the centerpiece of the room is a small circular table. On the table is a dark ceramic vase with some fresh red roses. A large crystal-like chandelier hangs above the table, its dim but focused light shining down onto the table; as if to encapsulate the roses in time.
 On the east wall is the grandfather clock, eerily ticking away and there are intricate oil paintings scattered about the east and west walls. 
 
 
-[[Go back to the lounge again.-&gt;Lounge]]
-[[Inspect the roses.-&gt;Foyer Roses]]</tw-passagedata><tw-passagedata pid="3" name="Front Door" tags="Start" position="1150,500" size="100,100">(set: $deathFlag to &quot;False&quot;)
-In front of you is a large gray and heavy wooden door with two glass panes of intricate stained glass windows and a robust brass knocker in the middle. There is a small brass mail slot and an antique door handle on the right. The door frame on the right side has the address number which is also inlaid in stained glass. It matches the address on the letter you received. You see a shadow pass by the window, but you hear no sound.
+[[Go back to the study again.-&gt;Study]]
+[[Inspect the roses.-&gt;Foyer Roses]]
+
+&lt;!-- Add more here --&gt;
+&lt;!-- 
+Inspect oil paintings, grandfather clock, 
+
+Locate doors to dining room, gallery, kitchen, ballroom, &amp; greenroom 
+
+Add stairs for 2nd floor
+
+Add exit to rear garden
+--&gt;</tw-passagedata><tw-passagedata pid="3" name="Front Door" tags="Start" position="1150,500" size="100,100">In front of you is a large gray and heavy wooden door with two glass panes of intricate stained glass windows and a robust brass knocker in the middle. There is a small brass mail slot and an antique door handle on the right. The door frame on the right side has the address number which is also inlaid in stained glass. It matches the address on the letter you received. You see a shadow pass by the window, but you hear no sound.
 
 The winds are picking up and the rain is becoming intense...
 
-[[Knock on the Large Door.-&gt;Large Door]]
-Enter the [[Grand Foyer Entrance]].</tw-passagedata><tw-passagedata pid="4" name="Car" tags="Start NoInventory" position="850,625" size="100,100">The rain and winds pick up. Lightning flashes! You turn to (t8n: &quot;pulse&quot;)[run] down the narrow dirt path from which you came. 
+[[Knock on the Large Door-&gt;Large Door]].
+Enter the [[Grand Foyer Entrance]].</tw-passagedata><tw-passagedata pid="4" name="Car" tags="Start NoInventory" position="900,700" size="100,100">The rain and winds pick up. Lightning flashes! You turn to (t8n: &quot;pulse&quot;)[run] down the narrow dirt path from which you came. 
 
 A huge gust of wind blows and pushes you off balance and your heart starts to (text-style:&quot;shudder&quot;)[race].
 
@@ -78,8 +89,9 @@ Then &#39;&#39;darkness...&#39;&#39;
 }
 
 (set: $deathFlag to &quot;True&quot;)
+
 &lt;!-- This is how to remove items from the inventory --&gt;
-(set: $inventory to $inventory - (a: &quot; a carefully penned letter&quot;, &quot; a small photograph&quot;))</tw-passagedata><tw-passagedata pid="5" name="Large Door" tags="Start NoInventory" position="1175,675" size="100,100">&#39;&#39;Rap, rap, rap...&#39;&#39;
+(set: $inventory to $inventory - (a: &quot; a carefully penned letter&quot;, &quot; a small photograph&quot;))</tw-passagedata><tw-passagedata pid="5" name="Large Door" tags="Start NoInventory" position="1200,700" size="100,100">&#39;&#39;Rap, rap, rap...&#39;&#39;
 
 (live: 2s)[//Silence...//]
 
@@ -89,10 +101,7 @@ Then &#39;&#39;darkness...&#39;&#39;
 
 (live: 12s)[You fiddle with the door handle. It appears to be unlocked...]
 
-(live: 16s)[[[I guess go in then...-&gt;Grand Foyer Entrance]]]</tw-passagedata><tw-passagedata pid="6" name="Lounge" tags="Start 1st-Floor" position="1600,600" size="100,100">The smell of old cigars, leather, and the warmth of the fireplace along the wall greets you as you under the room. In the center of the room are two high-back leather chairs with a small round wooden table between them.
-Along the long wall is a bookshelf with several old books. Although, a few seem missing judging by the spaces between them.
-
-[[Go back to the Grand Foyer.-&gt;Grand Foyer]]</tw-passagedata><tw-passagedata pid="7" name="Grand Foyer Entrance" tags="" position="1300,500" size="100,100">From a massive wind gust, the door slams shut behind you and you hear a clack of the deadbolt engaging on that door. You realize you cannot go out the way you came in.
+(live: 16s)[[[I guess go in then...-&gt;Grand Foyer Entrance]]]</tw-passagedata><tw-passagedata pid="6" name="Grand Foyer Entrance" tags="" position="1300,500" size="100,100">From a massive wind gust, the door slams shut behind you and you hear a clack of the deadbolt engaging on that door. You realize you cannot go out the way you came in.
 
 You are all alone in the grand foyer of an old-victorian but well maintained mansion. Nothing else can be heard except the sound of a great grandfather clock ticks in the distance...
 
@@ -100,17 +109,17 @@ In front of you is a large hallway with several doors on each side and a set of 
 
 At the end of the long hallway and there&#39;s a room on the far side with a door open. The dancing light from a fireplace is flowing out into the open.
 
-[[I guess I&#39;ll go towards the light...-&gt;Lounge]]
-[[Explore the Foyer-&gt;Grand Foyer]]</tw-passagedata><tw-passagedata pid="8" name="Foyer Roses" tags="" position="1500,250" size="100,100">(if:visits &gt; 1 and &lt; 3)[This seems oddly familiar...]
-
+[[I guess I&#39;ll go towards the light...-&gt;Study]]
+[[Explore the Foyer-&gt;Grand Foyer]].</tw-passagedata><tw-passagedata pid="7" name="Foyer Roses" tags="" position="1500,250" size="100,100">(if: visits is 1)[(set: $deathFlag to &quot;False&quot;)]
+(if: visits &gt; 1 and $inventory&#39;s length is 2)[&#39;&#39;This seems oddly familiar...&#39;&#39;]
 You walk closer to the roses, but stop short of the barrier between the shadows and the chandelier light. Everything looks peaceful... calming. 
 
-(if:visits &lt; 3)[You move closer to the vase. Close enough to catch the enticing aroma of the roses. Their perfect appearance means they must have been cut today, although the roses appear to lay slightly to the right side of the vase. As is something was either placed inside or the roses were purposely shifted in the vase.]
+(if: $inventory&#39;s length is 2)[You move closer to the vase. Close enough to catch the enticing aroma of the roses. Their perfect appearance means they must have been cut today, although the roses appear to lay slightly to the right side of the vase. As is something was either placed inside or the roses were purposely shifted in the vase.]
+(if: $inventory&#39;s length is not 2)[(if: $inventory&#39;s 3rd is &quot;a dining room skeleton key&quot;)[You have already found the key.]
+Return to the [[Grand Foyer]].]
 
-(if:visits &lt; 3)[[Reach your hand inside the vase.-&gt;Death Roses]]
-(if:visits &gt; 1 and &lt; 3)[[[Carefully remove roses from the vase.-&gt;Remove Roses]]]
-
-(link-goto: &quot;Back&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="9" name="Death Roses" tags="NoInventory" position="1350,225" size="100,100">You reach your hand inside the vase without removing the roses. You feel a sharp prick from one of the thorns on the stem as your hand moves down. You retract your hand and see a few drops of blood from your knuckle. It&#39;s minor and decide to have another go at it again.
+(if: $inventory&#39;s length is 2)[[[Reach your hand inside the vase-&gt;Death Roses]].]
+(if: visits &gt; 1 and $deathFlag is &quot;True&quot;)[[[Carefully remove roses from the vase-&gt;Remove Roses]].]</tw-passagedata><tw-passagedata pid="8" name="Death Roses" tags="NoInventory" position="1350,225" size="100,100">You reach your hand inside the vase without removing the roses. You feel a sharp prick from one of the thorns on the stem as your hand moves down. You retract your hand and see a few drops of blood from your knuckle. It&#39;s minor and decide to have another go at it again.
 
 You reach your hand back inside, this time you feel two more sharp pricks as you start feeling around inside the vase. Something doesn&#39;t feel right...
 
@@ -123,33 +132,48 @@ Then &#39;&#39;darkness...&#39;&#39;
 
 (live: 4s)+(text-colour:red)+(text-style:&quot;smear&quot;)+(text-size:2)[&#39;&#39;You died.&#39;&#39;]
 
+(set: $deathFlag to &quot;True&quot;)
+
 {
 	(live: 5s)+(text-style: &quot;fade-in-out&quot;)[
     	(link: &quot;Restart&quot;)[(confirm:&quot;Restart?&quot;)(go-to:&quot;Starting Area&quot;))]
     ]
-}</tw-passagedata><tw-passagedata pid="10" name="Remove Roses" tags="" position="1350,350" size="100,100">You tip the vase to the right and hear something slide along the bottom. Carefully, you grab the roses on on the top part of the stem and remove them from the vase. You place the roses on the gently on the table and notice two spiders scurry off out of the light and back into the darkness of the room. 
+}</tw-passagedata><tw-passagedata pid="9" name="Remove Roses" tags="" position="1350,350" size="100,100">You tip the vase to the right and hear something slide along the bottom. Carefully, you grab the roses on on the top part of the stem and remove them from the vase. You place the roses on the gently on the table and notice two spiders scurry off out of the light and back into the darkness of the room. 
 
 You look inside the vase and see an old skeleton key.
 
 [[Grab the skeleton key.-&gt;Skeleton Key-Dining Room]]
-</tw-passagedata><tw-passagedata pid="11" name="Skeleton Key-Dining Room" tags="Inventory" position="1150,250" size="100,100">(set: $inventory to $inventory + (a:&quot;a dining room skeleton key&quot;))
-(go-to:&quot;Grand Foyer&quot;)</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="Inventory" position="1000,350" size="100,100">You have: (if: $inventory&#39;s length &gt; 0)+(for: each _item, ...$inventory)[
+</tw-passagedata><tw-passagedata pid="10" name="Skeleton Key-Dining Room" tags="Inventory" position="1150,250" size="100,100">(set: $inventory to $inventory + (a:&quot;a dining room skeleton key&quot;))
+(set: $deathFlag to &quot;False&quot;)
+(go-to:&quot;Grand Foyer&quot;)</tw-passagedata><tw-passagedata pid="11" name="Inventory" tags="Inventory" position="1000,350" size="100,100">You have: (if: $inventory&#39;s length &gt; 0)+(for: each _item, ...$inventory)[
 -(color:#07951A)[ (link-reveal:(str: _item))[(display:_item)]]]
 (else:)[Nothing. Your inventory is empty.]
-(link-goto: &quot;Return&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="13" name="footer" tags="footer footerclass" position="775,350" size="100,100">(if: (passage:)&#39;s name is &quot;Inventory&quot;)[&lt;!--Do Nothing--&gt;]
+You used: (if: $usedInventory&#39;s length &gt; 0)+(for: each _useditem, ...$usedInventory)[
+-(color:#F83434)[ (link-reveal:(str: _useditem))[(display:_useditem)]]]
+(else:)[Nothing. Your used inventory is empty.]
+(link-goto: &quot;Return&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="12" name="footer" tags="footer footerclass" position="850,350" size="100,100">(if: (passage:)&#39;s name is &quot;Inventory&quot;)[&lt;!--Do Nothing--&gt;]
 (else-if: (passage:)&#39;s tags contains &quot;NoInventory&quot;)[&lt;!--Do nothing--&gt;]
-(else:)[Check [[Inventory]].]</tw-passagedata><tw-passagedata pid="14" name="Title" tags="NoInventory" position="850,500" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)+(text-size:3)[&quot;The Mansion&quot;
+(else:)[Check [[Inventory]].]</tw-passagedata><tw-passagedata pid="13" name="Title" tags="NoInventory" position="850,500" size="100,100">(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)+(text-size:3)[&quot;The Mansion&quot;
 (live:2s)+(text-size:2)+(text-style:&quot;fade-in-out&quot;)[[[Start-&gt;Starting Area]]]]
-</tw-passagedata><tw-passagedata pid="15" name="a carefully penned letter" tags="Inventory" position="150,350" size="100,100">
+</tw-passagedata><tw-passagedata pid="14" name="a carefully penned letter" tags="Inventory" position="150,350" size="100,100">
 (text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[The letter reads as follows:]
 (text-color: &quot;white&quot;)+(text-indent:60)+(text-style:&quot;superscript&quot;)[To Whom It May Concern,]
 (text-color: &quot;white&quot;)+(text-indent:80)+(text-style:&quot;superscript&quot;)[Your presence is requested at the behest of a Mr. and Mrs. Duncan. It is of an urgent matter. Would you kindly come immediately.]
 (text-color: &quot;white&quot;)+(text-indent:60)+(text-style:&quot;superscript&quot;)[Signed,]
 (text-color: &quot;white&quot;)+(text-indent:60)+(text-style:&quot;italic&quot;)+(text-style:&quot;superscript&quot;)[&quot;An old friend&quot;]
-</tw-passagedata><tw-passagedata pid="16" name="a small photograph" tags="Inventory" position="150,475" size="100,100">
+</tw-passagedata><tw-passagedata pid="15" name="a small photograph" tags="Inventory" position="150,475" size="100,100">
 (text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[A small black and white photograph. The edges are worn and yellowed through time.]
-(text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[The photograph is of a group of people in front of a mansion, although their faces are out of focus.]</tw-passagedata><tw-passagedata pid="17" name="a dining room skeleton key" tags="Inventory" position="150,600" size="100,100">
-(text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[An old skeleton key. It looks brittle and might break if used again.]</tw-passagedata></tw-storydata>
+(text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[The photograph is of a group of people in front of a mansion, although their faces are out of focus.]
+(text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[On the back side there is &quot;Summer 1901&quot; written in callihraphy.&quot;</tw-passagedata><tw-passagedata pid="16" name="a dining room skeleton key" tags="Inventory" position="150,600" size="100,100">
+(text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[An old skeleton key. It looks brittle and might break if used again.]</tw-passagedata><tw-passagedata pid="17" name="Study" tags="1st-Floor" position="1500,700" size="100,100">The smell of old cigars, leather, and the warmth of the fireplace along the wall greets you as you under the room. In the center of the room are two high-back leather chairs with a small round wooden table between them.
+Along the long wall is a bookshelf with several old books. Although, a few seem missing judging by the spaces between them.
+
+[[Go back to the Grand Foyer.-&gt;Grand Foyer]]
+
+&lt;!-- Add more here --&gt;</tw-passagedata><tw-passagedata pid="18" name="Dining Room Door" tags="1st-Floor" position="1675,250" size="100,100">(set: $inventory to $inventory - (a:&quot;a dining room skeleton key&quot;))
+(set: $usedInventory to $usedInventory + (a:&quot;a dining room skeleton key&quot;)) You unlocked the dining room with (color:#07951A)[&#39;&#39;the dining room skeleton key&#39;&#39;]. The bit of the key broke inside the lock and is now useless.
+
+Enter [[Dining Room]].</tw-passagedata><tw-passagedata pid="19" name="Dining Room" tags="1st-Floor" position="1675,100" size="100,100">Text</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
