@@ -50,10 +50,13 @@ FIXED: Issue when restarting the passage and returning from the inventory, the d
 Walking around the Grand Foyer you notice the centerpiece of the room is a small circular table. On the table is a dark ceramic vase with some fresh red roses. A large crystal-like chandelier hangs above the table, its dim but focused light shining down onto the table; as if to encapsulate the roses in time.
 On the east wall is the grandfather clock, eerily ticking away and there are intricate oil paintings scattered about the east and west walls. 
 
+There is a large staircase going up to the unlit Second Floor.
+
 [[Inspect the roses-&gt;Foyer Roses]].
 [[Inspect the Grandfather Clock-&gt;Grandfather Clock]].
 [[Inspect the East Wall Painting-&gt;East Wall Painting]].
 [[Inspect the West Wall Painting-&gt;West Wall Painting]].
+[[Go to the Second Floor-&gt;Second Floor Staircase Up]]
 [[Go back to the study again-&gt;Study]].
 &lt;!-- Add more here --&gt;
 &lt;!-- 
@@ -167,7 +170,7 @@ Jump to:
 (text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[A small black and white photograph. The edges are worn and yellowed through time.]
 (text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[The photograph is of a group of people in front of a mansion, although their faces are out of focus.]
 (text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[On the back side there is &quot;Summer 1901&quot; written in callihraphy.&quot;</tw-passagedata><tw-passagedata pid="15" name="a dining room skeleton key" tags="Inventory" position="150,600" size="100,100">
-(text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[An old skeleton key. It looks brittle and might break if used again.]</tw-passagedata><tw-passagedata pid="16" name="Study" tags="1st-Floor" position="1700,600" size="100,100">The smell of old cigars, leather, and the warmth of the fireplace along the wall greets you as you under the room. In the center of the room are two high-back leather chairs with a small round wooden table between them.
+(text-color: &quot;white&quot;)+(text-indent:20)+(text-style:&quot;superscript&quot;)[An old skeleton key. It looks brittle and might break if used again.]</tw-passagedata><tw-passagedata pid="16" name="Study" tags="1st-Floor" position="1650,650" size="100,100">The smell of old cigars, leather, and the warmth of the fireplace along the wall greets you as you under the room. In the center of the room are two high-back leather chairs with a small round wooden table between them.
 Along the long wall is a bookshelf with several old books. Although, a few seem missing judging by the spaces between them.
 
 [[Go back to the Grand Foyer.-&gt;Grand Foyer]]
@@ -181,9 +184,9 @@ Enter [[Dining Room]].</tw-passagedata><tw-passagedata pid="18" name="Dining Roo
 
 The portrait is of a family of some sort; however, the oil paint is cracked and faded; recognizing the faces is impossible.
 
-(link-goto: &quot;Return&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="21" name="West Wall Painting" tags="" position="1500,700" size="100,100">Test.
+(link-goto: &quot;Return&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="21" name="West Wall Painting" tags="" position="1475,700" size="100,100">Test.
 
-(link-goto: &quot;Return&quot;, (history:)&#39;s last)</tw-passagedata></tw-storydata>
+(link-goto: &quot;Return&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="22" name="Second Floor Staircase Up" tags="" position="1900,625" size="100,100">The stairs are dark and unlit at the first landing. It might be wise to find someway to light it.</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
